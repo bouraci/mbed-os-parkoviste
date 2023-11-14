@@ -1,8 +1,6 @@
 #ifndef LCD_FUNCTIONS_H
 #define LCD_FUNCTIONS_H
 
-#include "car.h"
-
 #ifndef __LCD_DISCO_F469NI_H
 #include "LCD_DISCO_F469NI.h"
 #endif

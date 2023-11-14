@@ -1,8 +1,11 @@
+#include <chrono>
+#include <stack>
+
 #include "include/car.h"
 #include "include/lcd_funcs.h"
 #include "include/parking_lot.h"
-#include "stm32469i_discovery_lcd.h"
-#include <stack>
+
+using namespace std::chrono;
 
 void car_behaviour(
     LCD_DISCO_F469NI *lcd,
@@ -12,9 +15,8 @@ void car_behaviour(
     Mutex *m_lcd,
     Mutex *m_parking
     ) {
-    std::chrono::milliseconds time_parked = std::chrono::milliseconds(car_params->time_parked);
-    std::chrono::milliseconds time_driving = std::chrono::milliseconds(car_params->time_driving);
-
+    milliseconds time_parked = milliseconds(car_params->time_parked);
+    milliseconds time_driving = milliseconds(car_params->time_driving);
 
     while (true) {
         ThisThread::sleep_for(time_driving);
